@@ -7,18 +7,22 @@ Nginx из поставики CryptoPro 5.x версии. Сертифициро
 
 Создавайте ключи без паролей!
 
-Информация о сертификатах
-/opt/cprocsp/bin/amd64/certmgr -list
+Информация о сертификатах:
 
-Установка корневых и промежуточных сертификатов
-/opt/cprocsp/bin/amd64/certmgr -inst -store uRoot -file /path/to/root.cer
-/opt/cprocsp/bin/amd64/certmgr -inst -store uCa -file /path/to/intermediate.cer
+```/opt/cprocsp/bin/amd64/certmgr -list```
 
-Создание сертификата на тестовом УЦ КриптоПро
-/opt/cprocsp/bin/amd64/cryptcp -creatcert -provtype 80 -rdn "CN=example.com" -cont '\\.\HDIMAGE\srv' -certusage 1.3.6.1.5.5.7.3.1 -ku -du -both -exprt -ca http://testgost2012.cryptopro.ru/certsrv/
+Установка корневых и промежуточных сертификатов:
+
+```/opt/cprocsp/bin/amd64/certmgr -inst -store uRoot -file /path/to/root.cer```
+
+```/opt/cprocsp/bin/amd64/certmgr -inst -store uCa -file /path/to/intermediate.cer```
+
+Создание сертификата на тестовом УЦ КриптоПро:
+
+```/opt/cprocsp/bin/amd64/cryptcp -creatcert -provtype 80 -rdn "CN=example.com" -cont '\\.\HDIMAGE\srv' -certusage 1.3.6.1.5.5.7.3.1 -ku -du -both -exprt -ca http://testgost2012.cryptopro.ru/certsrv/```
 
 где заменить домен example.com надо на ваш. 
 
 Посмотреть информацию об установленных сертификатах и времени их действия:
 
-/opt/cprocsp/bin/amd64/certs_info
+```/opt/cprocsp/bin/amd64/certs_info```
